@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "title": "Laura Albert - Fullstack Web Developer"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact Me"
+  },
+  "hero": {
+    "badge": "Fullstack Web Developer",
+    "titleLine1": "Crafting",
+    "titleHighlight": "digital",
+    "titleLine2": "experiences with",
+    "titleItalic": "precision.",
+    "description": "I'm Laura Albert — I build scalable apps and turn ideas into real digital products.",
+    "contactBtn": "Contact Me",
+    "cvBtn": "Download CV",
+    "follow": "Follow me:",
+    "available": "Available for work",
+    "yearsExp": "Years of experience.",
+    "skillsTitle": "Technologies I work with",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "badge": "About Me",
+    "title": "Building the future,",
+    "titleItalic": "one component at a time.",
+    "p1": "A developer passionate about robust web solutions. I combine solid backend with dynamic, intuitive interfaces.",
+    "p2": "Experience adapting tech to business: Odoo modules, automations and custom web sites and tailored apps.",
+    "quote": "I turn complex problems into clean, scalable code focused on delivering real value to users.",
+    "highlights": [
+      {
+        "title": "Clean Code",
+        "description": "SOLID, Clean Architecture and DDD to build scalable, easy-to-maintain software."
+      },
+      {
+        "title": "Performance",
+        "description": "Optimizing processes, data flows and queries for more efficient development."
+      },
+      {
+        "title": "Collaboration",
+        "description": "Experience in professional teams managing version control with Git."
+      },
+      {
+        "title": "Tailored Solutions",
+        "description": "Analysis to adapt business logic to each client's real needs."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Featured Projects",
+    "title": "Projects with",
+    "titleItalic": "real impact.",
+    "description": "A selection of recent work combining robust logic with intuitive interfaces.",
+    "viewMore": "View more projects",
+    "items": [
+      {
+        "title": "GastroManager",
+        "description": "Restaurant and order management. Final degree project focused on optimizing dining and kitchen workflows."
+      }
+    ]
+  },
+  "experience": {
+    "badge": "Career Journey",
+    "title": "Experience that drives",
+    "titleItalic": "every project.",
+    "items": [
+      {
+        "period": "March 2026 - May 2026",
+        "role": "Development Intern",
+        "company": "NUNSYS",
+        "description": "Fullstack Bootcamp focused on Angular and Spring Boot. Hands-on learning applying clean architectures (SOLID, DDD), version control with Git, Docker containerization and unit testing. Training oriented to professional environments, problem solving and algorithmic optimization."
+      },
+      {
+        "period": "June 2023 - April 2025",
+        "role": "Odoo Developer",
+        "company": "Soluntec Soluciones Tecnológicas SL",
+        "description": "Development and maintenance of applications on the Odoo ecosystem: custom Python modules, dynamic views and structured reports (QWeb, XML), plus business flow automations and integrations. Analysis and resolution of incidents on production systems."
+      },
+      {
+        "period": "March 2023 - June 2023",
+        "role": "Odoo Developer (Internship)",
+        "company": "Soluntec Soluciones Tecnológicas SL",
+        "description": "Introduction to Odoo development and feature extension through custom modules, logic design and custom views. Additionally, I contributed to the design, frontend development and layout of corporate websites using WordPress."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's talk. Let's build",
+    "titleItalic": "something great.",
+    "description": "Have a project in mind, a collaboration proposal or a question? Fill out the form or reach out directly.",
+    "nameLabel": "Full name *",
+    "namePlaceholder": "Your name...",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me how I can help you...",
+    "charCount": "characters",
+    "submit": "Send Message",
+    "submitting": "Sending message...",
+    "sideTitle": "Prefer to connect directly?",
+    "sideDescription": "I'm open to full-time job opportunities or simply chatting about software development.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "locationValue": "Ontinyent, Valencia (Spain)",
+    "errors": {
+      "nameRequired": "Name is required.",
+      "nameMin": "Name must be at least 3 characters.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "messageRequired": "Message cannot be empty.",
+      "messageMin": "Message must be at least 10 characters.",
+      "formInvalid": "Please fix the form errors before submitting."
+    },
+    "success": "Message sent successfully! I'll get back to you as soon as possible.",
+    "error": "There was a problem sending your message. Please try again or email me directly."
+  }
+}

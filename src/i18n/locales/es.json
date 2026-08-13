@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "title": "Laura Albert - Desarrolladora Web Fullstack"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contáctame"
+  },
+  "hero": {
+    "badge": "Desarrolladora Web Fullstack",
+    "titleLine1": "Creo",
+    "titleHighlight": "experiencias",
+    "titleLine2": "digitales con",
+    "titleItalic": "precisión.",
+    "description": "Soy Laura Albert — desarrollo aplicaciones escalables y convierto ideas en productos digitales reales.",
+    "contactBtn": "Contáctame",
+    "cvBtn": "Descarga mi CV",
+    "follow": "Sígueme en:",
+    "available": "Disponible para trabajar",
+    "yearsExp": "Años de experiencia.",
+    "skillsTitle": "Tecnologías con las que trabajo",
+    "scroll": "Desplázate"
+  },
+  "about": {
+    "badge": "Sobre Mí",
+    "title": "Construyendo el futuro,",
+    "titleItalic": "componente a componente.",
+    "p1": "Desarrolladora apasionada por crear soluciones web robustas. Combino un backend sólido con interfaces dinámicas e intuitivas.",
+    "p2": "Experiencia adaptando tecnología al negocio: módulos en Odoo, automatizaciones y desarrollo de sitios web y apps a medida.",
+    "quote": "Traduzco problemas complejos en código limpio, escalable y centrado en aportar valor real al usuario.",
+    "highlights": [
+      {
+        "title": "Código Limpio",
+        "description": "SOLID, Clean Architecture y DDD para crear software escalable y fácil de mantener."
+      },
+      {
+        "title": "Rendimiento",
+        "description": "Optimización de procesos, flujos de datos y consultas para un desarrollo más eficiente."
+      },
+      {
+        "title": "Colaboración",
+        "description": "Experiencia en equipos profesionales gestionando el control de versiones con Git."
+      },
+      {
+        "title": "Soluciones a Medida",
+        "description": "Análisis para adaptar la lógica de negocio a las necesidades reales de cada cliente."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Proyectos Destacados",
+    "title": "Proyectos con",
+    "titleItalic": "impacto real.",
+    "description": "Una selección de trabajos recientes que combinan lógica robusta e interfaces intuitivas.",
+    "viewMore": "Ver más proyectos",
+    "items": [
+      {
+        "title": "GastroManager",
+        "description": "Gestión de restauración y comandas. TFG enfocado en optimizar los flujos de trabajo en sala y cocina."
+      }
+    ]
+  },
+  "experience": {
+    "badge": "Trayectoria Profesional",
+    "title": "Experiencia que impulsa",
+    "titleItalic": "cada proyecto.",
+    "items": [
+      {
+        "period": "Marzo 2026 - Mayo 2026",
+        "role": "Becaria de Desarrollo",
+        "company": "NUNSYS",
+        "description": "Bootcamp Fullstack enfocado en Angular y Spring Boot. Aprendizaje práctico aplicando arquitecturas limpias (SOLID, DDD), control de versiones con Git, contenerización en Docker y desarrollo de pruebas unitarias. Formación orientada al entorno profesional, resolución de problemas y optimización algorítmica."
+      },
+      {
+        "period": "Junio 2023 - Abril 2025",
+        "role": "Desarrolladora Odoo",
+        "company": "Soluntec Soluciones Tecnológicas SL",
+        "description": "Desarrollo y mantenimiento de aplicaciones sobre el ecosistema Odoo: creación de módulos personalizados en Python, diseño de vistas dinámicas e informes estructurados (QWeb, XML), así como automatizaciones e integraciones de flujos de negocio. Análisis y resolución de incidencias sobre sistemas en producción."
+      },
+      {
+        "period": "Marzo 2023 - Junio 2023",
+        "role": "Desarrolladora Odoo (Prácticas)",
+        "company": "Soluntec Soluciones Tecnológicas SL",
+        "description": "Iniciación al desarrollo y extensión de funcionalidades en Odoo mediante módulos a medida, diseño de lógica y vistas personalizadas. Adicionalmente, colaboré en el diseño, desarrollo frontend y maquetación de sitios web corporativos utilizando WordPress."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "Hablemos. Diseñemos",
+    "titleItalic": "algo grande.",
+    "description": "¿Tienes un proyecto en mente, una propuesta de colaboración o alguna pregunta? Rellena el formulario o contáctame directamente.",
+    "nameLabel": "Nombre completo *",
+    "namePlaceholder": "Tu nombre...",
+    "emailLabel": "Correo electrónico *",
+    "emailPlaceholder": "tu@email.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntame en qué puedo ayudarte...",
+    "charCount": "caracteres",
+    "submit": "Enviar Mensaje",
+    "submitting": "Enviando mensaje...",
+    "sideTitle": "¿Prefieres conectar directamente?",
+    "sideDescription": "Estoy abierta a oportunidades de empleo a jornada completa o simplemente charlar sobre desarrollo de software.",
+    "info": {
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "location": "Ubicación"
+    },
+    "locationValue": "Ontinyent, Valencia (España)",
+    "errors": {
+      "nameRequired": "El nombre es obligatorio.",
+      "nameMin": "El nombre debe tener al menos 3 caracteres.",
+      "emailRequired": "El correo electrónico es obligatorio.",
+      "emailInvalid": "Introduce un correo electrónico válido.",
+      "messageRequired": "El mensaje no puede estar vacío.",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres.",
+      "formInvalid": "Por favor, corrige los errores del formulario antes de enviar."
+    },
+    "success": "¡Mensaje enviado con éxito! Te responderé lo antes posible.",
+    "error": "Hubo un problema al enviar el mensaje. Inténtalo de nuevo o escríbeme directamente."
+  }
+}
