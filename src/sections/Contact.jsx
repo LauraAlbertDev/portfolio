@@ -1,21 +1,19 @@
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/Button.jsx";
-import { useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { useTranslation } from "../i18n/LanguageContext";
-
+import { useTranslation } from "@/i18n/LanguageContext";
+import { useContactForm } from "@/hooks/useContactForm";
+import { FormField } from "@/components/contact/FormField";
 export const Contact = () => {
     const { t, language } = useTranslation();
-
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-
-    const [errors, setErrors] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState({ type: null, message: "" });
+    const {
+        formData,
+        errors,
+        isLoading,
+        submitStatus,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+    } = useContactForm(t, language);
 
     const contactInfo = [
         {
@@ -37,118 +35,6 @@ export const Contact = () => {
             href: "#",
         },
     ];
-
-    useEffect(() => {
-        setErrors({});
-        setSubmitStatus({ type: null, message: "" });
-    }, [language]);
-
-    const getFieldError = (name, value) => {
-        if (name === "name") {
-            if (!value.trim()) return t("contact.errors.nameRequired");
-            if (value.trim().length < 3) return t("contact.errors.nameMin");
-            return "";
-        }
-
-        if (name === "email") {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!value.trim()) return t("contact.errors.emailRequired");
-            if (!emailRegex.test(value.trim())) return t("contact.errors.emailInvalid");
-            return "";
-        }
-
-        if (name === "message") {
-            if (!value.trim()) return t("contact.errors.messageRequired");
-            if (value.trim().length < 10) return t("contact.errors.messageMin");
-            return "";
-        }
-
-        return "";
-    };
-
-    const validateField = (name, value) => {
-        const errorMsg = getFieldError(name, value);
-        setErrors((prev) => ({ ...prev, [name]: errorMsg }));
-        return errorMsg;
-    };
-
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        setFormData((prev) => ({ ...prev, [id]: value }));
-
-        if (submitStatus.type === "error") {
-            setSubmitStatus({ type: null, message: "" });
-        }
-
-        if (errors[id]) {
-            validateField(id, value);
-        }
-    };
-
-    const handleBlur = (e) => {
-        const { id, value } = e.target;
-        validateField(id, value);
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const newErrors = {
-            name: getFieldError("name", formData.name),
-            email: getFieldError("email", formData.email),
-            message: getFieldError("message", formData.message),
-        };
-
-        setErrors(newErrors);
-
-        const hasErrors = Object.values(newErrors).some(Boolean);
-        if (hasErrors) {
-            setSubmitStatus({
-                type: "error",
-                message: t("contact.errors.formInvalid"),
-            });
-            return;
-        }
-
-        setIsLoading(true);
-        setSubmitStatus({ type: null, message: "" });
-
-        try {
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-            if (!serviceId || !templateId || !publicKey) {
-                throw new Error("EmailJS configuration missing.");
-            }
-
-            await emailjs.send(
-                serviceId,
-                templateId,
-                {
-                    from_name: formData.name,
-                    reply_to: formData.email,
-                    message: formData.message,
-                },
-                publicKey
-            );
-
-            setSubmitStatus({
-                type: "success",
-                message: t("contact.success"),
-            });
-            setFormData({ name: "", email: "", message: "" });
-            setErrors({});
-        } catch (error) {
-            console.error("EmailJS error:", error);
-            setSubmitStatus({
-                type: "error",
-                message: t("contact.error"),
-            });
-        } finally {
-            setIsLoading(false);
-        }
-    };
 
     return (
         <section id="contact" className="py-32 relative overflow-hidden">
@@ -174,66 +60,34 @@ export const Contact = () => {
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-stretch">
+                    {/* Formulario */}
                     <div className="lg:col-span-7 glass p-8 rounded-3xl border border-primary/20 animate-fade-in relative">
                         <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-                            <div>
-                                <div className="flex justify-between items-center mb-2">
-                                    <label htmlFor="name" className="block text-sm font-medium text-foreground/80">
-                                        {t("contact.nameLabel")}
-                                    </label>
-                                    {errors.name && (
-                                        <span id="name-error" role="alert" className="text-xs text-red-400 font-medium">
-                                            {errors.name}
-                                        </span>
-                                    )}
-                                </div>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    placeholder={t("contact.namePlaceholder")}
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    aria-invalid={Boolean(errors.name)}
-                                    aria-describedby={errors.name ? "name-error" : undefined}
-                                    className={`w-full px-4 py-3 bg-surface rounded-xl border outline-none transition-all placeholder:text-muted-foreground/30 text-white ${
-                                        errors.name
-                                            ? "border-red-500/50 focus:border-red-500 focus:ring-1 focus:ring-red-500"
-                                            : "border-border focus:border-primary focus:ring-1 focus:ring-primary"
-                                    }`}
-                                />
-                            </div>
+                            {/* Campo Nombre */}
+                            <FormField
+                                id="name"
+                                label={t("contact.nameLabel")}
+                                type="text"
+                                placeholder={t("contact.namePlaceholder")}
+                                value={formData.name}
+                                error={errors.name}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                            />
 
-                            <div>
-                                <div className="flex justify-between items-center mb-2">
-                                    <label htmlFor="email" className="block text-sm font-medium text-foreground/80">
-                                        {t("contact.emailLabel")}
-                                    </label>
-                                    {errors.email && (
-                                        <span id="email-error" role="alert" className="text-xs text-red-400 font-medium">
-                                            {errors.email}
-                                        </span>
-                                    )}
-                                </div>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder={t("contact.emailPlaceholder")}
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    aria-invalid={Boolean(errors.email)}
-                                    aria-describedby={errors.email ? "email-error" : undefined}
-                                    className={`w-full px-4 py-3 bg-surface rounded-xl border outline-none transition-all placeholder:text-muted-foreground/30 text-white ${
-                                        errors.email
-                                            ? "border-red-500/50 focus:border-red-500 focus:ring-1 focus:ring-red-500"
-                                            : "border-border focus:border-primary focus:ring-1 focus:ring-primary"
-                                    }`}
-                                />
-                            </div>
+                            {/* Campo Email */}
+                            <FormField
+                                id="email"
+                                label={t("contact.emailLabel")}
+                                type="email"
+                                placeholder={t("contact.emailPlaceholder")}
+                                value={formData.email}
+                                error={errors.email}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                            />
 
+                            {/* Campo Mensaje */}
                             <div>
                                 <div className="flex justify-between items-center mb-2">
                                     <label htmlFor="message" className="block text-sm font-medium text-foreground/80">
@@ -288,9 +142,9 @@ export const Contact = () => {
                                     }`}
                                 >
                                     {submitStatus.type === "success" ? (
-                                        <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                                        <CheckCircle className="w-5 h-5 shrink-0" />
                                     ) : (
-                                        <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                                        <AlertCircle className="w-5 h-5 shrink-0" />
                                     )}
                                     <p className="text-sm font-medium">{submitStatus.message}</p>
                                 </div>
@@ -334,3 +188,4 @@ export const Contact = () => {
         </section>
     );
 };
+
