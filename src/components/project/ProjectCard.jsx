@@ -1,6 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 
 export const ProjectCard = ({ project, idx, viewCode }) => {
+  const imageUrl = project.image.startsWith("http")
+    ? project.image
+    : `${import.meta.env.BASE_URL}${project.image.replace(/^\//, "")}`;
   return (
     <div
       className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
@@ -8,7 +11,7 @@ export const ProjectCard = ({ project, idx, viewCode }) => {
     >
       <div className="relative overflow-hidden aspect-video">
         <img
-          src={project.image}
+          src={imageUrl}
           alt={project.title}
           className="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-110"
         />
