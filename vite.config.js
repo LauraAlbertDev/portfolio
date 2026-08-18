@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import process from 'node:process'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
@@ -9,7 +10,7 @@ const __dirname = path.dirname(__filename)
 
 // https://vite.dev/config/
 export default defineConfig({
-base: '/',
+  base: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
