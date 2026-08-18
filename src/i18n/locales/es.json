@@ -55,11 +55,11 @@
     "titleItalic": "impacto real.",
     "description": "Una selección de trabajos recientes que combinan lógica robusta e interfaces intuitivas.",
     "viewMore": "Ver más proyectos",
+    "viewCode": "Ver código",
     "items": [
-      {
-        "title": "GastroManager",
-        "description": "Gestión de restauración y comandas. TFG enfocado en optimizar los flujos de trabajo en sala y cocina."
-      }
+      { "title": "GastroManager" },
+      { "title": "Kreitify" },
+      { "title": "Portfolio V1" }
     ]
   },
   "experience": {

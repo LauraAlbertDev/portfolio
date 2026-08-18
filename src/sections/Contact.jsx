@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/Button.jsx";
 import { useTranslation } from "@/i18n/LanguageContext";
 import { useContactForm } from "@/hooks/useContactForm";
@@ -23,12 +23,6 @@ export const Contact = () => {
             href: "mailto:lalbertborrell@gmail.com",
         },
         {
-            icon: Phone,
-            label: t("contact.info.phone"),
-            value: "+34 659 032 587",
-            href: "tel:+34659032587",
-        },
-        {
             icon: MapPin,
             label: t("contact.info.location"),
             value: t("contact.locationValue"),
@@ -37,7 +31,7 @@ export const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="py-32 relative overflow-hidden">
+        <section id="contact" className="py-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"/>
                 <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"/>
@@ -63,7 +57,6 @@ export const Contact = () => {
                     {/* Formulario */}
                     <div className="lg:col-span-7 glass p-8 rounded-3xl border border-primary/20 animate-fade-in relative">
                         <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-                            {/* Campo Nombre */}
                             <FormField
                                 id="name"
                                 label={t("contact.nameLabel")}
@@ -75,7 +68,6 @@ export const Contact = () => {
                                 onBlur={handleBlur}
                             />
 
-                            {/* Campo Email */}
                             <FormField
                                 id="email"
                                 label={t("contact.emailLabel")}
@@ -87,7 +79,6 @@ export const Contact = () => {
                                 onBlur={handleBlur}
                             />
 
-                            {/* Campo Mensaje */}
                             <div>
                                 <div className="flex justify-between items-center mb-2">
                                     <label htmlFor="message" className="block text-sm font-medium text-foreground/80">
@@ -152,7 +143,7 @@ export const Contact = () => {
                         </form>
                     </div>
 
-                    <div className="lg:col-span-5 flex flex-col justify-between gap-6 lg:pl-4">
+                    <div className="lg:col-span-5 flex flex-col justify-center gap-6 lg:pl-4">
                         <div className="space-y-6">
                             <h3 className="text-2xl font-bold text-white">{t("contact.sideTitle")}</h3>
                             <p className="text-muted-foreground text-sm leading-relaxed">

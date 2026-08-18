@@ -1,4 +1,4 @@
-import perfilLaura from "@/assets/Avatar-portfolio.jpg";
+import perfilLaura from "/Avatar-portfolio.jpg";
 
 export const ProfileCard = ({ availableText, yearsExpText }) => (
     <div className="relative animate-fade-in animate-delay-500">

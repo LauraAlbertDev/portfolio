@@ -1,6 +1,7 @@
 export const SKILLS = [
     "Angular", "Git", "PHP", "Python", "Javascript",
-    "Java", "HTML", "CSS", "MongoDB", "SQL", "Typescript", "Ionic"
+    "Java", "HTML", "CSS", "MongoDB", "SQL", "Typescript", "Ionic", 
+    "React"
 ];
 
 export const SOCIAL_LINKS = [

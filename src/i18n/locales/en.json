@@ -55,11 +55,11 @@
     "titleItalic": "real impact.",
     "description": "A selection of recent work combining robust logic with intuitive interfaces.",
     "viewMore": "View more projects",
+    "viewCode": "View code",
     "items": [
-      {
-        "title": "GastroManager",
-        "description": "Restaurant and order management. Final degree project focused on optimizing dining and kitchen workflows."
-      }
+      { "title": "GastroManager" },
+      { "title": "Kreitify" },
+      { "title": "Portfolio V1" }
     ]
   },
   "experience": {
