@@ -36,7 +36,11 @@ export function initScrollReveal() {
     });
 }
 
-export function scrollToSection(href) {
+export function scrollToSection(href, e) {
+    if (e && typeof e.preventDefault === "function") {
+        e.preventDefault();
+    }
+
     if (href === "#" || href === "") {
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;

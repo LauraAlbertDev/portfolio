@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/Button"; 
 import { scrollToSection } from "@/utils/scrollReveal";
 import { useTranslation } from "@/i18n/LanguageContext";
@@ -9,11 +9,6 @@ import { ProfileCard } from "@/components/hero/ProfileCard";
 
 export const Hero = () => {
     const { t } = useTranslation();
-
-    const handleScrollToAbout = (e) => {
-        e.preventDefault();
-        scrollToSection("#about");
-    };
 
     return (
         <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
@@ -46,7 +41,7 @@ export const Hero = () => {
                         </div>
 
                         <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-300">
-                            <Button size="lg">
+                            <Button size="lg" onClick={(e) => scrollToSection("#contact", e)}>
                                 {t("hero.contactBtn")} <ArrowRight className="w-5 h-5" />
                             </Button>
                         </div>
@@ -61,17 +56,6 @@ export const Hero = () => {
                 </div>
 
                 <SkillsMarquee skillsTitle={t("hero.skillsTitle")} />
-            </div>
-
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-700">
-                <a
-                    href="#about"
-                    onClick={handleScrollToAbout}
-                    className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                    <span className="text-xs uppercase tracking-wider">{t("hero.scroll")}</span>
-                    <ChevronDown className="w-6 h-6 animate-bounce" />
-                </a>
             </div>
         </section>
     );
